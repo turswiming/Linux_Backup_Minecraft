@@ -24,7 +24,7 @@ crontab -e
 ``` 
 #### 设置每天3点1分运行:
 ``` 
-1 03 * * * /mnt/Backup-Local/MC/AutoBackup.sh >> /mnt/Backup-Local/MC/cron.log 2>&1
+0 */4 * * * /opt/Linux_Backup_Minecraft/AutoBackup.sh >> /opt/Linux_Backup_Minecraft/cron.log 2>&1
 ``` 
 #### 保存退出
 ```
@@ -34,17 +34,14 @@ crontab -e
 
 #### 或直接用:
 ``` 
-╭─root@D /mnt/Backup-Local 
-╰─# sh MC.sh 
-mkdir: 已创建目录 '/mnt/Backup-Local/MC'
-mkdir: 已创建目录 '/mnt/Backup-Local/MC/06-月'
-mkdir: 已创建目录 '/mnt/Backup-Local/MC/logs'
+root@D /opt/Linux_Backup_Minecraft/AutoBackup.sh 
+[2022-08-10 12:00:01] 开始备份数据
+zip warning: No such file or directory
+/opt/Linux_Backup_Minecraft/backup/08-月/0810_12_00_01-region-主地图.zip
+[2022-08-10 12:00:02] 备份数据成功
+删除了 [/opt/Linux_Backup_Minecraft/backup/08-月/0809_18_24_01-region-主地图.zip] 以节省存储
+现在有[10]个备份文件
 --------------------------
-0618_04_53_30-开始备份数据...
-操作完成.
-[2021-06-18 04:53:35] Successful
---------------------------
-╭─root@D /mnt/Backup-Local 
 ``` 
 
 

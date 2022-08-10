@@ -61,6 +61,21 @@ do
 	fi
 	j=`expr $j + 1`
 done
+
+j=0
+fileNum=`ls -l $LGD/|grep "^-" |wc -l`
+for i in `ls -1 $LGD/`
+do
+	tmp=`expr $j + $maxNum`
+	
+	if [ $tmp -lt $fileNum ];then
+		echo "删除了 [$LGD/$i] 以节省存储"
+		rm $LGD/$i
+	fi
+	j=`expr $j + 1`
+done
+
+
 fileNum=`ls -l $BKD/$M/|grep "^-" |wc -l`
 echo "现在有[$fileNum]个备份文件"
 
